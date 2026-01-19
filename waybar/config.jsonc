@@ -1,0 +1,85 @@
+[{
+    "layer": "bottom",
+    "position": "top",
+    "height": 40,
+    "spacing": 2,
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "passthrough": false,
+    "fixed-center": true,
+
+    "modules-left": ["custom/logo", "hyprland/window"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": [
+        "pulseaudio",
+        "clock",
+        "clock#simpleclock",
+        "tray",
+        "custom/battery",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{id}",
+        "all-outputs": true,
+        "disable-scroll": false,
+        "active-only": false,
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "{title}"
+    },
+
+    "tray": {
+        "show-passive-items": true,
+        "spacing": 10
+    },
+
+    "clock#simpleclock": {
+        "tooltip": false,
+        "format": " {:%H:%M}"
+    },
+
+    "clock": {
+        "format": "{:L%a %d %b}",
+        "calendar": {
+            "format": {
+                "days": "<span weight='normal'>{}</span>",
+                "months": "<span color='#cdd6f4'><b>{}</b></span>",
+                "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
+                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+                "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+            },
+            "mode": "month",
+            "mode-mon-col": 1,
+            "on-scroll": 1
+        },
+        "tooltip-format": "<span color='#cdd6f4' font='Lexend 16'><tt><small>{calendar}</small></tt></span>"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "headphone": "",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout -p layer-shell &",
+        "format": "⏻"
+    },
+
+"custom/battery": {
+    "exec": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage:/ {p=$2} /state:/ {s=$2} END {if (s ~ /charging|pending-charge|pending-discharge/) print p\" \"; else print p}'",
+    "interval": 10,
+    "tooltip": false,
+    "format": "  {}"
+}
+
+}]

@@ -1,0 +1,22 @@
+# Paramètres d'affichage
+mode=drun
+width=30%
+height=400
+location=center
+show=drun
+prompt=Rechercher...
+
+# Comportement
+filter_rate=100
+allow_markup=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+insensitive=true
+allow_images=true
+image_size=24
+
+# Sortie
+hide_scroll=true
+print_command=true

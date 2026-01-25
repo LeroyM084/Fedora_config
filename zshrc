@@ -33,3 +33,5 @@ mkcd() {
 alias selfip='bash "$HOME/Documents/Fedora_config/scripts/selfip/script.sh"'
 alias cli2text='node "$HOME/Documents/Fedora_config/scripts/cli2text/cli2text.js"'
 alias code='flatpak run com.visualstudio.code'
+
+if [ -e /home/mleroy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mleroy/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -1,0 +1,49 @@
+/* Variables pour modifier facilement les couleurs */
+@define-color bg #282a36;
+@define-color fg #f8f8f2;
+@define-color accent #bd93f9;
+@define-color selected #44475a;
+
+window {
+    margin: 0px;
+    border: 2px solid @accent;
+    background-color: @bg;
+    border-radius: 12px;
+    font-family: "Sans Serif", sans-serif;
+    font-size: 14px;
+}
+
+#outer-box {
+    margin: 10px;
+    border: none;
+}
+
+#input {
+    margin: 5px;
+    border: none;
+    color: @fg;
+    background-color: @selected;
+    border-radius: 8px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#entry {
+    padding: 10px;
+    border-radius: 8px;
+    color: @fg;
+}
+
+#entry:selected {
+    background-color: @selected;
+    outline: none;
+}
+
+#text:selected {
+    color: @accent;
+    font-weight: bold;
+}

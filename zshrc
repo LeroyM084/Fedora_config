@@ -49,3 +49,4 @@ if [ -e /home/mleroy/.nix-profile/etc/profile.d/nix.sh ]; then . /home/mleroy/.n
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+  

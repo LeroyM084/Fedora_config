@@ -13,11 +13,12 @@ alias cd='z'
 alias path='echo $PATH | tr ":" "\n"'
 alias myip='curl -s https://icanhazip.com'
 
-alias reload='source ~/.zshrc && echo "Configuration rechargée !"'
+alias reload='source ~/.zshrc && hyprctl reload && echo "Configuration rechargée !"'
 
 alias sudo='doas'
 
 # xbps est trop long à taper 
-alias xquery="xbps-query -Rs"
-alias xinstall="sudo xbps-install -S"
+# alias xquery="xbps-query -Rs"
+# alias xinstall="sudo xbps-install -S"
 alias xupdate="sudo xbps-install -Syu"
+alias xdelete="sudo xbps-remove -R"

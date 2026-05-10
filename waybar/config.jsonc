@@ -74,11 +74,16 @@
         "format": "⏻"
     },
 
-"custom/battery": {
-    "exec": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage:/ {p=$2} /state:/ {s=$2} END {if (s ~ /charging|pending-charge|pending-discharge/) print p\" \"; else print p}'",
-    "interval": 10,
-    "tooltip": false,
-    "format": "  {}"
-}
+    "custom/battery": {
+        "exec": "upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage:/ {p=$2} /state:/ {s=$2} END {if (s ~ /charging|pending-charge|pending-discharge/) print p\" \"; else print p}'",
+        "interval": 10,
+        "tooltip": false,
+        "format": "  {}"
+    },
+
+    "custom/vpn":{
+        "tooltip":false,
+        "on-click": ""
+    }
 
 }]

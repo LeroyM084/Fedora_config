@@ -43,7 +43,8 @@ window#waybar {
 #tray,
 #memory,
 #window,
-#custom-battery {
+#custom-battery,
+#network {
   padding: 0.3rem 0.6rem;
   margin: 0.4rem 0.25rem;
   border-radius: 6px;
@@ -69,6 +70,7 @@ window#waybar.empty #window {
 #custom-battery { color: #ffffff; }
 #custom-battery.charging { color: #f9e2af; }
 #custom-power { color: #f38ba8; }
+#network { color : #ffffff}
 
 tooltip {
   background-color: #181825;

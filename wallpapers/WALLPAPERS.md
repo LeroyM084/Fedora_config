@@ -1,0 +1,1 @@
+Wallpapers are kept in Google Drive. Use rclone to sync it back. Make sure it's in place in ~/Images/wallpapers

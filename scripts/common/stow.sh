@@ -2,7 +2,7 @@
 # Logique Stow partagée pour Void et Fedora
 
 DOTFILES="$HOME/.dotfiles"
-CONFIG_PACKAGES=(hypr kitty nvim waybar wlogout fuzzel wofi yazi swaylock catpuccin wallpapers)
+CONFIG_PACKAGES=(hypr kitty nvim waybar wlogout fuzzel yazi mako btop)
 
 # Stow les dotfiles dans ~/.config
 do_stow() {
@@ -11,11 +11,14 @@ do_stow() {
   # Créer ~/.config s'il n'existe pas
   mkdir -p "$HOME/.config"
 
-  # Stow chaque package de config dans ~/.config
+  # Stow chaque package dans son propre sous-dossier de ~/.config.
+  # Les packages sont des dossiers "plats" (ex: hypr/hyprland.conf), donc on
+  # cible ~/.config/<pkg>/ pour obtenir des symlinks par fichier au bon niveau.
   for pkg in "${CONFIG_PACKAGES[@]}"; do
     if [ -d "$DOTFILES/$pkg" ]; then
       echo "Stowing $pkg..."
-      stow --target="$HOME/.config" --dir="$DOTFILES" "$pkg" || {
+      mkdir -p "$HOME/.config/$pkg"
+      stow --target="$HOME/.config/$pkg" --dir="$DOTFILES" "$pkg" || {
         echo "❌ Failed to stow $pkg"
         return 1
       }
@@ -25,9 +28,11 @@ do_stow() {
   done
 
   # Symlink zshrc (à la racine du repo)
-  echo "Linking ~/.zshrc..."
+  echo "Linking ~/.zshrc... & p10k"
   mkdir -p "$HOME"
   ln -sf "$DOTFILES/zshrc" "$HOME/.zshrc"
+  ln -sf "$DOTFILES/p10k.zsh" "$HOME/.p10k.zsh"
+
 
   # Créer ~/.local/bin s'il n'existe pas et y mettre les scripts
   mkdir -p "$HOME/.local/bin"
@@ -64,6 +69,5 @@ install_sddm_theme() {
   echo "✅ SDDM theme installed"
 }
 
-# Exporter les fonctions pour sourcing
-export -f do_stow
-export -f install_sddm_theme
+# Note: do_stow et install_sddm_theme sont disponibles après `source` dans
+# le shell courant — pas besoin d'`export -f` (incompatible zsh).

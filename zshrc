@@ -39,7 +39,13 @@ alias cli2text='node "$HOME/Documents/Fedora_config/scripts/cli2text/cli2text.js
 alias code='flatpak run com.visualstudio.code'
 
 [[ -f ~/.dotfiles/zsh/aliases ]] && source ~/.dotfiles/zsh/aliases
-[[ -f ~/.dotfiles/zsh/ssh_client ]] && source ~/.dotfiles/zsh/ssh_client
+[[ -f ~/.dotfiles/zsh/ssh_agent ]] && source ~/.dotfiles/zsh/ssh_agent
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# --- 5. SOUND SERVER STARTUP ---
+(~/.local/bin/sound-server.sh >/dev/null 2>&1 &)
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

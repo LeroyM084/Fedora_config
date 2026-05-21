@@ -5,4 +5,4 @@ while ! hyprctl monitors &>/dev/null; do
 done
 # Attendre un monitor spécifique
 sleep 1
-mpvpaper -o "no-audio --loop --video-unscaled=no --panscan=1.0" '*' "~/.dotfiles/wallpapers/frog.mp4"
+mpvpaper -o "no-audio --loop --video-unscaled=no --panscan=1.0" '*' "~/Images/wallpapers/frog2.mp4"

@@ -71,7 +71,7 @@ cd ~/.dotfiles
 
 # Stow les configs
 mkdir -p ~/.config
-stow --target=~/.config hypr kitty nvim waybar wlogout fuzzel wofi yazi swaylock catpuccin wallpapers
+stow --target=~/.config hypr kitty nvim waybar wlogout fuzzel wofi yazi swaylock wallpapers
 
 # Symlink zshrc
 ln -sf ~/.dotfiles/zshrc ~/.zshrc

@@ -22,3 +22,8 @@ alias sudo='doas'
 # alias xinstall="sudo xbps-install -S"
 alias xupdate="sudo xbps-install -Syu"
 alias xdelete="sudo xbps-remove -R"
+
+alias xlist='f(){ xbps-query -l ${1:+| grep "$1"}; unset -f f; }; f'
+
+alias projeter='hyprctl keyword monitor HDMI-A-1,preferred,auto,0.5' # To test wired.
+alias end_projeter='hyprctl keyword monitor HDMI-A-1,preferred,auto,1.1'

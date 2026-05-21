@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Select a random wallpaper from ~/wallpapers/monet/
-MONET_DIR="$HOME/.dotfiles/wallpapers/monet"
+MONET_DIR="$HOME/Images/wallpapers/monet"
 WALLPAPERS=("$MONET_DIR"/*)
 
 # Check if directory has images

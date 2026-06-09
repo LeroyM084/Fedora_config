@@ -39,6 +39,7 @@ alias cli2text='node "$HOME/Documents/Fedora_config/scripts/cli2text/cli2text.js
 alias code='flatpak run com.visualstudio.code'
 
 [[ -f ~/.dotfiles/zsh/aliases ]] && source ~/.dotfiles/zsh/aliases
+[[ -f ~/.dotfiles/zsh/functions ]] && source ~/.dotfiles/zsh/functions
 [[ -f ~/.dotfiles/zsh/ssh_agent ]] && source ~/.dotfiles/zsh/ssh_agent
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

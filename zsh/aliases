@@ -29,3 +29,4 @@ alias projeter='hyprctl keyword monitor HDMI-A-1,preferred,auto,0.5' # To test w
 alias end_projeter='hyprctl keyword monitor HDMI-A-1,preferred,auto,1.1'
 
 alias fastfetch='fastfetch --logo-color-2 white'
+

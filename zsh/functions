@@ -1,0 +1,7 @@
+flatpak() {
+  if [[ "$1" == "run" ]]; then
+    dbus-run-session /usr/bin/flatpak "$@"
+  else
+    /usr/bin/flatpak "$@"
+  fi
+}
